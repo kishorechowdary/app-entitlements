@@ -1,59 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-edit-plist-file-fol7"
-    version="0.0.7">
-    
-    <name>Edit Plist file</name>
-    
-    <description>
-        A cordova "plugin" that helps you indicate the modifications on the iOS's *-info.plist file.
-        So it avoids you to directly edit the *-info.plist file.
-        For example it is used to whitelist some schemes for ios9.
-        This plugin was initially created to avoid iOS 9 problems that prevent opening other apps from your own app because some used plugins aren't updated to take into consideration the new specification for iOS 9.
-    </description>
+        id="io.phasr.cordova.plugin.itunesfilesharing"
+        version="0.0.1">
 
-    <author>Kishore - kishore@procomsoftsol.com </author>
-
-    <keywords>cordova,whitelist,ios9,ecosystem:cordova,ordova-ios</keywords>
-    
-    <license>MIT</license>
-    
-    <engines>
-        <!-- Requires > 3.3.* because of the custom Framework tag for iOS [CB-5238] -->
-        <!-- Requires > 3.5.0 because of the custom Framework tag for Android [CB-6698] -->
-        <engine name="cordova" version=">=3.5.0" />
-    </engines>
-    
-    
-    
-    <!-- ios -->
+    <name>cordova-plugin-itunesfilesharing</name>
+    <description>Cordova/PhoneGap plugin for enabling iTunes file sharing</description>
+    <license>Apache 2.0 License</license>
     <platform name="ios">
-	    
-	    <config-file target="*-Info.plist">
-    <dict>
-	    <key>aps-environment</key>
-	<string>development</string>
-	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:auto-certificates.learningmachine.io</string>
-		<string>applinks:certificates.learningmachine.com</string>
-		<string>applinks:stage-certificates.learningmachine.io</string>
-		<string>applinks:wallet.blockcerts.org</string>
-		<string>applinks:*.blockcertswallet.org</string>
-	</array>
-	<key>com.apple.developer.icloud-container-identifiers</key>
-	<array/>
-	<key>com.apple.developer.networking.wifi-info</key>
-	<true/>
-	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
-	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>
-	<key>com.apple.security.application-groups</key>
-	<array/>
-    </dict>
-</config-file>
-        
-	    	
+        <config-file target="*-Info.plist" parent="UIFileSharingEnabled">
+            <true/>
+        </config-file>
     </platform>
-    
 </plugin>
