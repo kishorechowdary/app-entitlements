@@ -31,12 +31,9 @@
     <platform name="ios">
 	    
 	    <config-file target="*-Info.plist" parent="com.apple.developer.associated-domains">
-<array>
     <dict>
-        <key>com.apple.developer.associated-domains</key>
         <string>applinks:flowoflearning.com</string>
     </dict>
-</array>
 </config-file>
         
         <!-- iOS9 whitelisting -->
