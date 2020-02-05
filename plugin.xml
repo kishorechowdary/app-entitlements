@@ -1,22 +1,43 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<plugin id="cordova-plugin-edit-plist-file-ios9" version="0.1.9" xmlns="http://apache.org/cordova/ns/plugins/1.0">
-    <name>App Transport Security</name>
-    <author>Lee Crossley (http://ilee.co.uk/)</author>
-    <description>Cordova / PhoneGap Plugin to allow 'Arbitrary Loads' by adding
-        a declaration to the Info.plist file to bypass the iOS 9 App Transport Security</description>
-    <keywords>cordova, ios, app, security, transport, http, https, ats,
-        ssl, tls, nsapptransportsecurity, nsallowsarbitraryloads</keywords>
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-edit-plist-file-fol7"
+    version="0.0.7">
+    
+    <name>Edit Plist file</name>
+    
+    <description>
+        A cordova "plugin" that helps you indicate the modifications on the iOS's *-info.plist file.
+        So it avoids you to directly edit the *-info.plist file.
+        For example it is used to whitelist some schemes for ios9.
+        This plugin was initially created to avoid iOS 9 problems that prevent opening other apps from your own app because some used plugins aren't updated to take into consideration the new specification for iOS 9.
+    </description>
+
+    <author>Kishore - kishore@procomsoftsol.com </author>
+
+    <keywords>cordova,whitelist,ios9,ecosystem:cordova,ordova-ios</keywords>
+    
     <license>MIT</license>
+    
     <engines>
-        <engine name="cordova" version=">=3.0.0"/>
+        <!-- Requires > 3.3.* because of the custom Framework tag for iOS [CB-5238] -->
+        <!-- Requires > 3.5.0 because of the custom Framework tag for Android [CB-6698] -->
+        <engine name="cordova" version=">=3.5.0" />
     </engines>
+    
+    
+    
+    <!-- ios -->
     <platform name="ios">
-      <config-file target="*.plist" parent="*">
-          <dict>
-              <key>com.apple.developer.associated-domains</key>
-              <string>applinks:flowoflearning.com</string>
-              <true/>
-          </dict>
-      </config-file>
+	    
+	    <config-file target="*.plist" parent="*">
+    <dict>
+	    <key>com.apple.developer.associated-domains</key>
+        <string>applinks:flowoflearning.com</string>
+    </dict>
+</config-file>
+        
+	    	
     </platform>
+    
 </plugin>
