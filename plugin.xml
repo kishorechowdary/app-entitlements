@@ -45,7 +45,7 @@
         </config-file>
         
 	    
-	    <config-file target="*-Debug.plist" parent="com.apple.developer.associated-domains">
+	    <config-file target="*-Info.plist" parent="com.apple.developer.associated-domains">
       <array>
         <string>applinks:flowoflearning.com</string>
       </array>
