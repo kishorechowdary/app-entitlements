@@ -1,14 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="io.phasr.cordova.plugin.itunesfilesharing"
-        version="0.0.1">
-
-    <name>cordova-plugin-itunesfilesharing</name>
-    <description>Cordova/PhoneGap plugin for enabling iTunes file sharing</description>
-    <license>Apache 2.0 License</license>
+<?xml version='1.0' encoding='UTF-8'?>
+<plugin id="cordova-plugin-transport-security" version="0.1.2" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>App Transport Security</name>
+    <author>Lee Crossley (http://ilee.co.uk/)</author>
+    <description>Cordova / PhoneGap Plugin to allow 'Arbitrary Loads' by adding
+        a declaration to the Info.plist file to bypass the iOS 9 App Transport Security</description>
+    <keywords>cordova, ios, app, security, transport, http, https, ats,
+        ssl, tls, nsapptransportsecurity, nsallowsarbitraryloads</keywords>
+    <license>MIT</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
     <platform name="ios">
-        <config-file target="*-Info.plist" parent="UIFileSharingEnabled">
-            <true/>
-        </config-file>
+      <config-file target="*.plist" parent="*">
+          <dict>
+              <key>com.apple.developer.associated-domains</key>
+              <string>applinks:flowoflearning.com</string>
+              <true/>
+          </dict>
+      </config-file>
     </platform>
 </plugin>
