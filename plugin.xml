@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="app-entitlements" version="0.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
-  <name>AppEntitlements</name>
-  <platform name="ios">
-    <config-file target="*-Debug.plist" parent="com.apple.developer.associated-domains">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-edit-plist-file-fol"
+    version="0.0.3">
+    
+    <name>Edit Plist file</name>
+    
+    <description>
+        A cordova "plugin" that helps you indicate the modifications on the iOS's *-info.plist file.
+        So it avoids you to directly edit the *-info.plist file.
+        For example it is used to whitelist some schemes for ios9.
+        This plugin was initially created to avoid iOS 9 problems that prevent opening other apps from your own app because some used plugins aren't updated to take into consideration the new specification for iOS 9.
+    </description>
+
+    <author>Kishore - kishore@procomsoftsol.com </author>
+
+    <keywords>cordova,whitelist,ios9,ecosystem:cordova,ordova-ios</keywords>
+    
+    <license>MIT</license>
+    
+    <engines>
+        <!-- Requires > 3.3.* because of the custom Framework tag for iOS [CB-5238] -->
+        <!-- Requires > 3.5.0 because of the custom Framework tag for Android [CB-6698] -->
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+    
+    
+    
+    <!-- ios -->
+    <platform name="ios">
+        
+        <!-- iOS9 whitelisting -->
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+            <array>
+                <string>twitter</string>
+                <string>fb</string>
+                <string>whatsapp</string>
+                <string>itms-apps</string>
+                <string>youtube</string>
+                <string>soundcloud</string>
+                <string>fb-messenger</string>
+                <string>instagram</string>
+            </array>
+        </config-file>
+        
+	    
+	    <config-file target="*-Debug.plist" parent="com.apple.developer.associated-domains">
       <array>
         <string>applinks:flowoflearning.com</string>
       </array>
     </config-file>
-    <config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
+	
+	<config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
       <array>
         <string>applinks:flowoflearning.com</string>
       </array>
     </config-file>
-  </platform>
+	
+    </platform>
+    
 </plugin>
