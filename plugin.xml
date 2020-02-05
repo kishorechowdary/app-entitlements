@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-edit-plist-file-fol5"
-    version="0.0.5">
+    id="cordova-plugin-edit-plist-file-fol6"
+    version="0.0.6">
     
     <name>Edit Plist file</name>
     
@@ -32,37 +32,12 @@
 	    
 	    <config-file target="*-Info.plist" parent="com.apple.developer.associated-domains">
     <dict>
+	    <key>com.apple.developer.associated-domains</key>
         <string>applinks:flowoflearning.com</string>
     </dict>
 </config-file>
         
-        <!-- iOS9 whitelisting -->
-        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
-            <array>
-                <string>twitter</string>
-                <string>fb</string>
-                <string>whatsapp</string>
-                <string>itms-apps</string>
-                <string>youtube</string>
-                <string>soundcloud</string>
-                <string>fb-messenger</string>
-                <string>instagram</string>
-            </array>
-        </config-file>
-        
-	    
-	    <config-file target="*-Info.plist" parent="com.apple.developer.associated-domains">
-      <array>
-        <string>applinks:flowoflearning.com</string>
-      </array>
-    </config-file>
-	
-	<config-file target="*-Release.plist" parent="com.apple.developer.associated-domains">
-      <array>
-        <string>applinks:flowoflearning.com</string>
-      </array>
-    </config-file>
-	
+	    	
     </platform>
     
 </plugin>
